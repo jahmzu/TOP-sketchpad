@@ -7,16 +7,19 @@ $(document).ready(function() {
 		
 			//second for loop creates 16 divs per row
 			for(var j=1; j<=numberTiles; j++) {
-				$('#row_'+i).append('<td><div class="tile"></div></td');
+				$('#row_'+i).append('<td><div class="tile"></div></td>');
 			}
 		}
 		
 		//adjusts size of each tile.
-		var sideLen = Math.floor(800/numberTiles);
+		var sideLen = 800/numberTiles;
 		$('.tile').css({'height': sideLen+'px', 'width':sideLen+'px'});
+		$('td').css({'height': sideLen+'px', 'width':sideLen+'px'});
+		console.log(sideLen);
+
 	}
 
-	var numTiles = prompt("How many tiles per side?");
+	var numTiles = prompt("How many tiles per side? ");
 		
 	//Ensures user's input is a number. Otherwise, prompts user. 
 	while(isNaN(numTiles)) {
@@ -27,8 +30,6 @@ $(document).ready(function() {
 	//Create a table in container div
 	$('#container').append('<table></table>');
 	$('#container').find('table').addClass('grid');
-	$('#container').append('<div id="left_butt"></div>');
-	$('#container').append('<div id="right_butt"></div>');
 	$('#container').append('<button id="reset">Reset</button>');
 	$('#container').append('<h1>TOP Sketchpad</h1>');
 	
