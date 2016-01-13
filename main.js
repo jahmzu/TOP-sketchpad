@@ -44,7 +44,10 @@ $(document).ready(function() {
 	$('#reset').click(function() {
 		$('.tile').css('background-color', '#b3b3b3');
 		$('.grid').remove('table');
-		numTiles = prompt("Ok, how many tiles now?");
+		numTiles = prompt("Ok, how many tiles per side now?");
+		while(isNaN(numTiles)) {
+			numTiles = prompt("Please enter a number");
+		}
 		$('#container').prepend('<table></table>');
 		$('#container').find('table').addClass('grid');
 		createTable(numTiles);
